@@ -46,16 +46,115 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminDashboard.Designer.cs">
+      <DependentUpon>AdminDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InventoryReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InventoryReport.Designer.cs">
+      <DependentUpon>InventoryReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminManageItems.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminManageItems.Designer.cs">
+      <DependentUpon>AdminManageItems.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminManageUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminManageUsers.Designer.cs">
+      <DependentUpon>AdminManageUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StaffGudangDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StaffGudangDashboard.Designer.cs">
+      <DependentUpon>StaffGudangDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StaffGudangIncomingItems.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StaffGudangIncomingItems.Designer.cs">
+      <DependentUpon>StaffGudangIncomingItems.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StaffGudangOutcomingItems.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StaffGudangOutcomingItems.Designer.cs">
+      <DependentUpon>StaffGudangOutcomingItems.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StaffGudangViewItems.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StaffGudangViewItems.Designer.cs">
+      <DependentUpon>StaffGudangViewItems.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TransactionReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransactionReport.Designer.cs">
+      <DependentUpon>TransactionReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ManagerDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerDashboard.Designer.cs">
+      <DependentUpon>ManagerDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerPendingTransactions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerPendingTransactions.Designer.cs">
+      <DependentUpon>ManagerPendingTransactions.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AdminDashboard.resx">
+      <DependentUpon>AdminDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InventoryReport.resx">
+      <DependentUpon>InventoryReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminManageItems.resx">
+      <DependentUpon>AdminManageItems.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminManageUsers.resx">
+      <DependentUpon>AdminManageUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StaffGudangDashboard.resx">
+      <DependentUpon>StaffGudangDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StaffGudangIncomingItems.resx">
+      <DependentUpon>StaffGudangIncomingItems.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StaffGudangOutcomingItems.resx">
+      <DependentUpon>StaffGudangOutcomingItems.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StaffGudangViewItems.resx">
+      <DependentUpon>StaffGudangViewItems.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransactionReport.resx">
+      <DependentUpon>TransactionReport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerDashboard.resx">
+      <DependentUpon>ManagerDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerPendingTransactions.resx">
+      <DependentUpon>ManagerPendingTransactions.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
