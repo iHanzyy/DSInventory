@@ -29,44 +29,47 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminManageItems));
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.searchBTN = new System.Windows.Forms.Button();
+            this.searchTB = new System.Windows.Forms.TextBox();
             this.judul = new System.Windows.Forms.Label();
-            this.manageUsersBTN = new System.Windows.Forms.Button();
+            this.addItemBTN = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.deleteItemBTN = new System.Windows.Forms.Button();
+            this.editItemBTN = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.itemCodeTB = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.quantityTB = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.itemNameTB = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.categoryTB = new System.Windows.Forms.TextBox();
+            this.backBTN = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
+            // searchBTN
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(226)))));
-            this.button1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(895, 73);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(212, 59);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "SEARCH";
-            this.button1.UseVisualStyleBackColor = false;
+            this.searchBTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(226)))));
+            this.searchBTN.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchBTN.ForeColor = System.Drawing.Color.White;
+            this.searchBTN.Location = new System.Drawing.Point(895, 73);
+            this.searchBTN.Name = "searchBTN";
+            this.searchBTN.Size = new System.Drawing.Size(212, 59);
+            this.searchBTN.TabIndex = 8;
+            this.searchBTN.Text = "SEARCH";
+            this.searchBTN.UseVisualStyleBackColor = false;
+            this.searchBTN.Click += new System.EventHandler(this.searchBTN_Click);
             // 
-            // textBox1
+            // searchTB
             // 
-            this.textBox1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(860, 26);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(247, 41);
-            this.textBox1.TabIndex = 7;
+            this.searchTB.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchTB.Location = new System.Drawing.Point(860, 26);
+            this.searchTB.Multiline = true;
+            this.searchTB.Name = "searchTB";
+            this.searchTB.Size = new System.Drawing.Size(247, 41);
+            this.searchTB.TabIndex = 7;
+            this.searchTB.TextChanged += new System.EventHandler(this.searchTB_TextChanged);
             // 
             // judul
             // 
@@ -79,17 +82,18 @@
             this.judul.TabIndex = 6;
             this.judul.Text = "Item List";
             // 
-            // manageUsersBTN
+            // addItemBTN
             // 
-            this.manageUsersBTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(226)))));
-            this.manageUsersBTN.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.manageUsersBTN.ForeColor = System.Drawing.Color.White;
-            this.manageUsersBTN.Location = new System.Drawing.Point(156, 69);
-            this.manageUsersBTN.Name = "manageUsersBTN";
-            this.manageUsersBTN.Size = new System.Drawing.Size(212, 59);
-            this.manageUsersBTN.TabIndex = 5;
-            this.manageUsersBTN.Text = "ADD NEW ITEM";
-            this.manageUsersBTN.UseVisualStyleBackColor = false;
+            this.addItemBTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(226)))));
+            this.addItemBTN.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addItemBTN.ForeColor = System.Drawing.Color.White;
+            this.addItemBTN.Location = new System.Drawing.Point(156, 69);
+            this.addItemBTN.Name = "addItemBTN";
+            this.addItemBTN.Size = new System.Drawing.Size(212, 59);
+            this.addItemBTN.TabIndex = 5;
+            this.addItemBTN.Text = "ADD NEW ITEM";
+            this.addItemBTN.UseVisualStyleBackColor = false;
+            this.addItemBTN.Click += new System.EventHandler(this.addItemBTN_Click);
             // 
             // dataGridView1
             // 
@@ -100,30 +104,34 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(951, 292);
             this.dataGridView1.TabIndex = 9;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseClick);
             // 
-            // button3
+            // deleteItemBTN
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(226)))));
-            this.button3.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(895, 562);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(212, 59);
-            this.button3.TabIndex = 20;
-            this.button3.Text = "DELETE ITEM";
-            this.button3.UseVisualStyleBackColor = false;
+            this.deleteItemBTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(226)))));
+            this.deleteItemBTN.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deleteItemBTN.ForeColor = System.Drawing.Color.White;
+            this.deleteItemBTN.Location = new System.Drawing.Point(895, 562);
+            this.deleteItemBTN.Name = "deleteItemBTN";
+            this.deleteItemBTN.Size = new System.Drawing.Size(212, 59);
+            this.deleteItemBTN.TabIndex = 20;
+            this.deleteItemBTN.Text = "DELETE ITEM";
+            this.deleteItemBTN.UseVisualStyleBackColor = false;
+            this.deleteItemBTN.Click += new System.EventHandler(this.deleteItemBTN_Click);
             // 
-            // button2
+            // editItemBTN
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(226)))));
-            this.button2.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(895, 455);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(212, 59);
-            this.button2.TabIndex = 19;
-            this.button2.Text = "EDIT ITEM";
-            this.button2.UseVisualStyleBackColor = false;
+            this.editItemBTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(226)))));
+            this.editItemBTN.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editItemBTN.ForeColor = System.Drawing.Color.White;
+            this.editItemBTN.Location = new System.Drawing.Point(895, 455);
+            this.editItemBTN.Name = "editItemBTN";
+            this.editItemBTN.Size = new System.Drawing.Size(212, 59);
+            this.editItemBTN.TabIndex = 19;
+            this.editItemBTN.Text = "EDIT ITEM";
+            this.editItemBTN.UseVisualStyleBackColor = false;
+            this.editItemBTN.Click += new System.EventHandler(this.editItemBTN_Click);
             // 
             // label1
             // 
@@ -136,14 +144,14 @@
             this.label1.TabIndex = 18;
             this.label1.Text = "Item Code";
             // 
-            // textBox2
+            // itemCodeTB
             // 
-            this.textBox2.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(156, 483);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(247, 41);
-            this.textBox2.TabIndex = 17;
+            this.itemCodeTB.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.itemCodeTB.Location = new System.Drawing.Point(156, 483);
+            this.itemCodeTB.Multiline = true;
+            this.itemCodeTB.Name = "itemCodeTB";
+            this.itemCodeTB.Size = new System.Drawing.Size(247, 41);
+            this.itemCodeTB.TabIndex = 17;
             // 
             // label2
             // 
@@ -156,14 +164,14 @@
             this.label2.TabIndex = 22;
             this.label2.Text = "Quantity";
             // 
-            // textBox3
+            // quantityTB
             // 
-            this.textBox3.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(156, 595);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(247, 41);
-            this.textBox3.TabIndex = 21;
+            this.quantityTB.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.quantityTB.Location = new System.Drawing.Point(156, 595);
+            this.quantityTB.Multiline = true;
+            this.quantityTB.Name = "quantityTB";
+            this.quantityTB.Size = new System.Drawing.Size(247, 41);
+            this.quantityTB.TabIndex = 21;
             // 
             // label3
             // 
@@ -176,14 +184,14 @@
             this.label3.TabIndex = 24;
             this.label3.Text = "Item Name";
             // 
-            // textBox4
+            // itemNameTB
             // 
-            this.textBox4.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(439, 483);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(247, 41);
-            this.textBox4.TabIndex = 23;
+            this.itemNameTB.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.itemNameTB.Location = new System.Drawing.Point(439, 483);
+            this.itemNameTB.Multiline = true;
+            this.itemNameTB.Name = "itemNameTB";
+            this.itemNameTB.Size = new System.Drawing.Size(247, 41);
+            this.itemNameTB.TabIndex = 23;
             // 
             // label4
             // 
@@ -196,35 +204,49 @@
             this.label4.TabIndex = 26;
             this.label4.Text = "Category";
             // 
-            // textBox5
+            // categoryTB
             // 
-            this.textBox5.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(439, 595);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(247, 41);
-            this.textBox5.TabIndex = 25;
+            this.categoryTB.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.categoryTB.Location = new System.Drawing.Point(439, 595);
+            this.categoryTB.Multiline = true;
+            this.categoryTB.Name = "categoryTB";
+            this.categoryTB.Size = new System.Drawing.Size(247, 41);
+            this.categoryTB.TabIndex = 25;
+            // 
+            // backBTN
+            // 
+            this.backBTN.BackColor = System.Drawing.Color.Green;
+            this.backBTN.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.backBTN.ForeColor = System.Drawing.Color.White;
+            this.backBTN.Location = new System.Drawing.Point(648, 55);
+            this.backBTN.Name = "backBTN";
+            this.backBTN.Size = new System.Drawing.Size(131, 49);
+            this.backBTN.TabIndex = 27;
+            this.backBTN.Text = "BACK";
+            this.backBTN.UseVisualStyleBackColor = false;
+            this.backBTN.Click += new System.EventHandler(this.backBTN_Click);
             // 
             // AdminManageItems
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1262, 673);
+            this.Controls.Add(this.backBTN);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.categoryTB);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.itemNameTB);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.quantityTB);
+            this.Controls.Add(this.deleteItemBTN);
+            this.Controls.Add(this.editItemBTN);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.itemCodeTB);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.searchBTN);
+            this.Controls.Add(this.searchTB);
             this.Controls.Add(this.judul);
-            this.Controls.Add(this.manageUsersBTN);
+            this.Controls.Add(this.addItemBTN);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AdminManageItems";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -237,20 +259,21 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button searchBTN;
+        private System.Windows.Forms.TextBox searchTB;
         private System.Windows.Forms.Label judul;
-        private System.Windows.Forms.Button manageUsersBTN;
+        private System.Windows.Forms.Button addItemBTN;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button deleteItemBTN;
+        private System.Windows.Forms.Button editItemBTN;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox itemCodeTB;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox quantityTB;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox itemNameTB;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox categoryTB;
+        private System.Windows.Forms.Button backBTN;
     }
 }
