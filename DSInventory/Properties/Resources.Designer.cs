@@ -73,6 +73,26 @@ namespace DSInventory.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap itemlist {
+            get {
+                object obj = ResourceManager.GetObject("itemlist", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap itemlist1 {
+            get {
+                object obj = ResourceManager.GetObject("itemlist1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap judul {
             get {
                 object obj = ResourceManager.GetObject("judul", resourceCulture);
@@ -136,6 +156,16 @@ namespace DSInventory.Properties {
         internal static System.Drawing.Bitmap password {
             get {
                 object obj = ResourceManager.GetObject("password", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap userlist {
+            get {
+                object obj = ResourceManager.GetObject("userlist", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

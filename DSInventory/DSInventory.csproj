@@ -213,5 +213,14 @@
   <ItemGroup>
     <None Include="Resources\juduladmin.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\userlist.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\itemlist.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\itemlist1.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

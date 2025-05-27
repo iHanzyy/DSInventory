@@ -15,7 +15,9 @@ namespace DSInventory
     {
         public AdminManageItems()
         {
-            InitializeComponent(); dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill; // Agar Full Size
+            InitializeComponent(); 
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill; // Agar Full Size
+            StyleDataGridView(); // Untuk Styling DataGridView
             showDisplay();
         }
         SqlConnection conn = new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=DSInventory;Integrated Security=True;");
@@ -44,6 +46,28 @@ namespace DSInventory
             {
                 MessageBox.Show("DATA YANG ANDA CARI TIDAK ADA!");
             }
+        }
+
+        private void StyleDataGridView()
+        {
+            dataGridView1.BorderStyle = BorderStyle.None;
+            dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
+            dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dataGridView1.DefaultCellStyle.SelectionBackColor = Color.FromArgb(72, 123, 237);
+            dataGridView1.DefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
+            dataGridView1.BackgroundColor = Color.White;
+            dataGridView1.EnableHeadersVisualStyles = false;
+            dataGridView1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(52, 73, 94);
+            dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dataGridView1.DefaultCellStyle.Font = new Font("Segoe UI", 10);
+            dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 11, FontStyle.Bold);
+            dataGridView1.RowTemplate.Height = 30;
+            dataGridView1.GridColor = Color.LightGray;
+            dataGridView1.RowsDefaultCellStyle.BackColor = Color.White;
+            dataGridView1.RowsDefaultCellStyle.ForeColor = Color.Black;
+            dataGridView1.RowHeadersVisible = false;
+
         }
 
         private void searchBTN_Click(object sender, EventArgs e)
@@ -131,7 +155,7 @@ namespace DSInventory
 
         private void searchTB_TextChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void backBTN_Click(object sender, EventArgs e)
@@ -143,6 +167,11 @@ namespace DSInventory
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
