@@ -51,58 +51,62 @@ namespace DSInventory
 
         private void loginBTN_Click(object sender, EventArgs e)
         {
-            string username = usernameTB.Text;
-            string password = passwordTB.Text;
-            string role = roleCB.Text;
+            string username = usernameTB.Text.Trim();
+            string password = passwordTB.Text.Trim();
 
             try
             {
                 if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
                 {
-                    MessageBox.Show("Username dan Password harus di isi", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Username dan Password harus diisi", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
-                // Cek Admin 
-                if (username == "admin" && password == "admin123" && role == "ADMIN")
+                // Cek jika admin hardcode
+                if (username == "admin" && password == "admin123")
                 {
                     AdminDashboard adminForm = new AdminDashboard();
                     adminForm.Show();
-                    this.Hide(); // Hide LoginForm
+                    this.Hide();
                     return;
                 }
 
-                // Cek Role
-                string query = "SELECT COUNT(*) FROM [users] WHERE username = @username AND password = @password AND role = @role";
+                string query = "SELECT role FROM [users] WHERE username = @username AND password = @password";
 
                 conn.Open();
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("@username", username);
                     cmd.Parameters.AddWithValue("@password", password);
-                    cmd.Parameters.AddWithValue("@role", role);
 
-                    int count = (int)cmd.ExecuteScalar();
-                    if (count > 0 && role == "MANAGER")
+                    object result = cmd.ExecuteScalar();
+
+                    if (result != null)
                     {
-                        // Login berhasil, beralih ke manager
-                        ManagerDashboard managerForm = new ManagerDashboard();
-                        managerForm.Show();
+                        string role = result.ToString().ToUpper();
+
+                        if (role == "MANAGER")
+                        {
+                            ManagerDashboard managerForm = new ManagerDashboard();
+                            managerForm.Show();
+                        }
+                        else if (role == "STAFF GUDANG")
+                        {
+                            StaffGudangDashboard staffForm = new StaffGudangDashboard();
+                            staffForm.Show();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Role tidak dikenali.", "Login Gagal", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+
                         this.Hide();
-                        return;
-                    } else if (count > 0 && role == "STAFF GUDANG")
-                    {
-                        // Login berhasil, beralih ke staff gudang
-                        StaffGudangDashboard staffGudangForm = new StaffGudangDashboard();
-                        staffGudangForm.Show();
-                        this.Hide();
-                        return;
                     }
                     else
                     {
-                        MessageBox.Show("Username atau password salah!", "Login Gagal", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Username atau Password salah!", "Login Gagal", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-
                 }
             }
             catch (SqlException ex)
@@ -120,6 +124,11 @@ namespace DSInventory
                     conn.Close();
                 }
             }
+        }
+
+        private void roleCB_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
