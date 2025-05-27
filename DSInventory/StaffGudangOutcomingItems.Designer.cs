@@ -29,48 +29,52 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StaffGudangOutcomingItems));
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.backToDashboardBTN = new System.Windows.Forms.Button();
+            this.cancelBTN = new System.Windows.Forms.Button();
+            this.transactionDateDTP = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.quantityBTN = new System.Windows.Forms.TextBox();
+            this.selectItemBTN = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.manageUsersBTN = new System.Windows.Forms.Button();
+            this.submitTransactionBTN = new System.Windows.Forms.Button();
             this.judul = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // button2
+            // backToDashboardBTN
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(226)))));
-            this.button2.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(77, 97);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(212, 59);
-            this.button2.TabIndex = 38;
-            this.button2.Text = "BACK TO DASHBOARD";
-            this.button2.UseVisualStyleBackColor = false;
+            this.backToDashboardBTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(226)))));
+            this.backToDashboardBTN.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.backToDashboardBTN.ForeColor = System.Drawing.Color.White;
+            this.backToDashboardBTN.Location = new System.Drawing.Point(77, 97);
+            this.backToDashboardBTN.Name = "backToDashboardBTN";
+            this.backToDashboardBTN.Size = new System.Drawing.Size(212, 59);
+            this.backToDashboardBTN.TabIndex = 38;
+            this.backToDashboardBTN.Text = "BACK TO DASHBOARD";
+            this.backToDashboardBTN.UseVisualStyleBackColor = false;
+            this.backToDashboardBTN.Click += new System.EventHandler(this.backToDashboardBTN_Click);
             // 
-            // button1
+            // cancelBTN
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(226)))));
-            this.button1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(335, 510);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(212, 59);
-            this.button1.TabIndex = 37;
-            this.button1.Text = "CANCEL";
-            this.button1.UseVisualStyleBackColor = false;
+            this.cancelBTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(226)))));
+            this.cancelBTN.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cancelBTN.ForeColor = System.Drawing.Color.White;
+            this.cancelBTN.Location = new System.Drawing.Point(335, 510);
+            this.cancelBTN.Name = "cancelBTN";
+            this.cancelBTN.Size = new System.Drawing.Size(212, 59);
+            this.cancelBTN.TabIndex = 37;
+            this.cancelBTN.Text = "CANCEL";
+            this.cancelBTN.UseVisualStyleBackColor = false;
+            this.cancelBTN.Click += new System.EventHandler(this.cancelBTN_Click);
             // 
-            // dateTimePicker1
+            // transactionDateDTP
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(77, 434);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(247, 22);
-            this.dateTimePicker1.TabIndex = 36;
+            this.transactionDateDTP.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.transactionDateDTP.Location = new System.Drawing.Point(77, 434);
+            this.transactionDateDTP.Name = "transactionDateDTP";
+            this.transactionDateDTP.Size = new System.Drawing.Size(247, 32);
+            this.transactionDateDTP.TabIndex = 36;
+            this.transactionDateDTP.ValueChanged += new System.EventHandler(this.transactionDateDTP_ValueChanged);
             // 
             // label1
             // 
@@ -94,24 +98,27 @@
             this.label2.TabIndex = 34;
             this.label2.Text = "Quantity";
             // 
-            // textBox3
+            // quantityBTN
             // 
-            this.textBox3.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(77, 313);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(247, 41);
-            this.textBox3.TabIndex = 33;
+            this.quantityBTN.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.quantityBTN.Location = new System.Drawing.Point(77, 313);
+            this.quantityBTN.Multiline = true;
+            this.quantityBTN.Name = "quantityBTN";
+            this.quantityBTN.Size = new System.Drawing.Size(247, 41);
+            this.quantityBTN.TabIndex = 33;
+            this.quantityBTN.TextChanged += new System.EventHandler(this.quantityBTN_TextChanged);
             // 
-            // comboBox1
+            // selectItemBTN
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.IntegralHeight = false;
-            this.comboBox1.ItemHeight = 16;
-            this.comboBox1.Location = new System.Drawing.Point(77, 225);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(247, 24);
-            this.comboBox1.TabIndex = 32;
+            this.selectItemBTN.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.selectItemBTN.FormattingEnabled = true;
+            this.selectItemBTN.IntegralHeight = false;
+            this.selectItemBTN.ItemHeight = 25;
+            this.selectItemBTN.Location = new System.Drawing.Point(77, 225);
+            this.selectItemBTN.Name = "selectItemBTN";
+            this.selectItemBTN.Size = new System.Drawing.Size(247, 33);
+            this.selectItemBTN.TabIndex = 32;
+            this.selectItemBTN.SelectedIndexChanged += new System.EventHandler(this.selectItemBTN_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -124,17 +131,18 @@
             this.label4.TabIndex = 31;
             this.label4.Text = "Select Item";
             // 
-            // manageUsersBTN
+            // submitTransactionBTN
             // 
-            this.manageUsersBTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(226)))));
-            this.manageUsersBTN.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.manageUsersBTN.ForeColor = System.Drawing.Color.White;
-            this.manageUsersBTN.Location = new System.Drawing.Point(77, 510);
-            this.manageUsersBTN.Name = "manageUsersBTN";
-            this.manageUsersBTN.Size = new System.Drawing.Size(212, 59);
-            this.manageUsersBTN.TabIndex = 30;
-            this.manageUsersBTN.Text = "SUBMIT TRANSACTION";
-            this.manageUsersBTN.UseVisualStyleBackColor = false;
+            this.submitTransactionBTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(226)))));
+            this.submitTransactionBTN.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.submitTransactionBTN.ForeColor = System.Drawing.Color.White;
+            this.submitTransactionBTN.Location = new System.Drawing.Point(77, 510);
+            this.submitTransactionBTN.Name = "submitTransactionBTN";
+            this.submitTransactionBTN.Size = new System.Drawing.Size(212, 59);
+            this.submitTransactionBTN.TabIndex = 30;
+            this.submitTransactionBTN.Text = "SUBMIT TRANSACTION";
+            this.submitTransactionBTN.UseVisualStyleBackColor = false;
+            this.submitTransactionBTN.Click += new System.EventHandler(this.submitTransactionBTN_Click);
             // 
             // judul
             // 
@@ -152,20 +160,21 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1262, 673);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.backToDashboardBTN);
+            this.Controls.Add(this.cancelBTN);
+            this.Controls.Add(this.transactionDateDTP);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.quantityBTN);
+            this.Controls.Add(this.selectItemBTN);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.manageUsersBTN);
+            this.Controls.Add(this.submitTransactionBTN);
             this.Controls.Add(this.judul);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "StaffGudangOutcomingItems";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "StaffGudangOutcomingItems";
+            this.Load += new System.EventHandler(this.StaffGudangOutcomingItems_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -173,15 +182,15 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Button backToDashboardBTN;
+        private System.Windows.Forms.Button cancelBTN;
+        private System.Windows.Forms.DateTimePicker transactionDateDTP;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox quantityBTN;
+        private System.Windows.Forms.ComboBox selectItemBTN;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button manageUsersBTN;
+        private System.Windows.Forms.Button submitTransactionBTN;
         private System.Windows.Forms.Label judul;
     }
 }

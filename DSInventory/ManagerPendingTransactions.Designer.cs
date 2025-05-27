@@ -30,9 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManagerPendingTransactions));
             this.judul = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.rejectBTN = new System.Windows.Forms.Button();
+            this.approveBTN = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.backBTN = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,29 +48,31 @@
             this.judul.TabIndex = 7;
             this.judul.Text = "Transactions Requiring Approval";
             // 
-            // button3
+            // rejectBTN
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(226)))));
-            this.button3.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(892, 549);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(212, 59);
-            this.button3.TabIndex = 23;
-            this.button3.Text = "REJECT";
-            this.button3.UseVisualStyleBackColor = false;
+            this.rejectBTN.BackColor = System.Drawing.Color.Red;
+            this.rejectBTN.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rejectBTN.ForeColor = System.Drawing.Color.White;
+            this.rejectBTN.Location = new System.Drawing.Point(892, 442);
+            this.rejectBTN.Name = "rejectBTN";
+            this.rejectBTN.Size = new System.Drawing.Size(212, 59);
+            this.rejectBTN.TabIndex = 23;
+            this.rejectBTN.Text = "REJECT";
+            this.rejectBTN.UseVisualStyleBackColor = false;
+            this.rejectBTN.Click += new System.EventHandler(this.rejectBTN_Click);
             // 
-            // button2
+            // approveBTN
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(226)))));
-            this.button2.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(892, 442);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(212, 59);
-            this.button2.TabIndex = 22;
-            this.button2.Text = "APPROVE";
-            this.button2.UseVisualStyleBackColor = false;
+            this.approveBTN.BackColor = System.Drawing.Color.Green;
+            this.approveBTN.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.approveBTN.ForeColor = System.Drawing.Color.White;
+            this.approveBTN.Location = new System.Drawing.Point(162, 442);
+            this.approveBTN.Name = "approveBTN";
+            this.approveBTN.Size = new System.Drawing.Size(212, 59);
+            this.approveBTN.TabIndex = 22;
+            this.approveBTN.Text = "APPROVE";
+            this.approveBTN.UseVisualStyleBackColor = false;
+            this.approveBTN.Click += new System.EventHandler(this.approveBTN_Click);
             // 
             // dataGridView1
             // 
@@ -80,14 +83,29 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(951, 292);
             this.dataGridView1.TabIndex = 21;
+            this.dataGridView1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseClick);
+            // 
+            // backBTN
+            // 
+            this.backBTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(226)))));
+            this.backBTN.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.backBTN.ForeColor = System.Drawing.Color.White;
+            this.backBTN.Location = new System.Drawing.Point(1015, 30);
+            this.backBTN.Name = "backBTN";
+            this.backBTN.Size = new System.Drawing.Size(131, 49);
+            this.backBTN.TabIndex = 24;
+            this.backBTN.Text = "BACK";
+            this.backBTN.UseVisualStyleBackColor = false;
+            this.backBTN.Click += new System.EventHandler(this.backBTN_Click);
             // 
             // ManagerPendingTransactions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1262, 673);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.backBTN);
+            this.Controls.Add(this.rejectBTN);
+            this.Controls.Add(this.approveBTN);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.judul);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -103,8 +121,9 @@
         #endregion
 
         private System.Windows.Forms.Label judul;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button rejectBTN;
+        private System.Windows.Forms.Button approveBTN;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button backBTN;
     }
 }

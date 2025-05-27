@@ -21,5 +21,38 @@ namespace DSInventory
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            LoginPage loginForm = new LoginPage();
+            loginForm.Show();
+            this.Hide();
+            return;
+        }
+
+        private void manageItemsBTN_Click(object sender, EventArgs e)
+        {
+            InventoryReport inventoryReportForm = new InventoryReport();
+            inventoryReportForm.Show();
+            this.Hide();
+            return;
+
+        }
+
+        private void transactionReportBTN_Click(object sender, EventArgs e)
+        {
+            TransactionReport transactionReportForm = new TransactionReport();
+            transactionReportForm.Show();
+            this.Hide();
+            return;
+        }
+
+        private void pendingTransactionsBTN_Click(object sender, EventArgs e)
+        {
+            ManagerPendingTransactions pendingTransactionsForm = new ManagerPendingTransactions();
+            pendingTransactionsForm.Show();
+            this.Hide();
+            return;
+        }
     }
 }

@@ -30,21 +30,22 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TransactionReport));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
+            this.totalTransactionsTXT = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
+            this.incomingTransactionTXT = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
+            this.outgoingTransactionTXT = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
+            this.pendingApprovalTXT = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.judul = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.searchBTN = new System.Windows.Forms.Button();
+            this.searchTB = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.logoutBTN = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -55,23 +56,24 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(226)))));
-            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.totalTransactionsTXT);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(45, 44);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(255, 100);
             this.panel1.TabIndex = 1;
             // 
-            // label2
+            // totalTransactionsTXT
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(114, 56);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(26, 25);
-            this.label2.TabIndex = 20;
-            this.label2.Text = "0";
+            this.totalTransactionsTXT.AutoSize = true;
+            this.totalTransactionsTXT.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalTransactionsTXT.ForeColor = System.Drawing.Color.Black;
+            this.totalTransactionsTXT.Location = new System.Drawing.Point(114, 56);
+            this.totalTransactionsTXT.Name = "totalTransactionsTXT";
+            this.totalTransactionsTXT.Size = new System.Drawing.Size(26, 25);
+            this.totalTransactionsTXT.TabIndex = 20;
+            this.totalTransactionsTXT.Text = "0";
+            this.totalTransactionsTXT.Click += new System.EventHandler(this.totalTransactionsTXT_Click);
             // 
             // label1
             // 
@@ -87,23 +89,24 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(226)))));
-            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.incomingTransactionTXT);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Location = new System.Drawing.Point(346, 44);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(277, 100);
             this.panel2.TabIndex = 21;
             // 
-            // label3
+            // incomingTransactionTXT
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(129, 56);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(26, 25);
-            this.label3.TabIndex = 20;
-            this.label3.Text = "0";
+            this.incomingTransactionTXT.AutoSize = true;
+            this.incomingTransactionTXT.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.incomingTransactionTXT.ForeColor = System.Drawing.Color.Black;
+            this.incomingTransactionTXT.Location = new System.Drawing.Point(129, 56);
+            this.incomingTransactionTXT.Name = "incomingTransactionTXT";
+            this.incomingTransactionTXT.Size = new System.Drawing.Size(26, 25);
+            this.incomingTransactionTXT.TabIndex = 20;
+            this.incomingTransactionTXT.Text = "0";
+            this.incomingTransactionTXT.Click += new System.EventHandler(this.incomingTransactionTXT_Click);
             // 
             // label4
             // 
@@ -119,23 +122,24 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(226)))));
-            this.panel3.Controls.Add(this.label5);
+            this.panel3.Controls.Add(this.outgoingTransactionTXT);
             this.panel3.Controls.Add(this.label6);
             this.panel3.Location = new System.Drawing.Point(671, 44);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(277, 100);
             this.panel3.TabIndex = 22;
             // 
-            // label5
+            // outgoingTransactionTXT
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(129, 56);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(26, 25);
-            this.label5.TabIndex = 20;
-            this.label5.Text = "0";
+            this.outgoingTransactionTXT.AutoSize = true;
+            this.outgoingTransactionTXT.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.outgoingTransactionTXT.ForeColor = System.Drawing.Color.Black;
+            this.outgoingTransactionTXT.Location = new System.Drawing.Point(129, 56);
+            this.outgoingTransactionTXT.Name = "outgoingTransactionTXT";
+            this.outgoingTransactionTXT.Size = new System.Drawing.Size(26, 25);
+            this.outgoingTransactionTXT.TabIndex = 20;
+            this.outgoingTransactionTXT.Text = "0";
+            this.outgoingTransactionTXT.Click += new System.EventHandler(this.outgoingTransactionTXT_Click);
             // 
             // label6
             // 
@@ -151,23 +155,24 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(226)))));
-            this.panel4.Controls.Add(this.label7);
+            this.panel4.Controls.Add(this.pendingApprovalTXT);
             this.panel4.Controls.Add(this.label8);
             this.panel4.Location = new System.Drawing.Point(979, 44);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(255, 100);
             this.panel4.TabIndex = 21;
             // 
-            // label7
+            // pendingApprovalTXT
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(114, 56);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(26, 25);
-            this.label7.TabIndex = 20;
-            this.label7.Text = "0";
+            this.pendingApprovalTXT.AutoSize = true;
+            this.pendingApprovalTXT.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pendingApprovalTXT.ForeColor = System.Drawing.Color.Black;
+            this.pendingApprovalTXT.Location = new System.Drawing.Point(114, 56);
+            this.pendingApprovalTXT.Name = "pendingApprovalTXT";
+            this.pendingApprovalTXT.Size = new System.Drawing.Size(26, 25);
+            this.pendingApprovalTXT.TabIndex = 20;
+            this.pendingApprovalTXT.Text = "0";
+            this.pendingApprovalTXT.Click += new System.EventHandler(this.pendingApprovalTXT_Click);
             // 
             // label8
             // 
@@ -191,26 +196,27 @@
             this.judul.TabIndex = 24;
             this.judul.Text = "Transaction List";
             // 
-            // button1
+            // searchBTN
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(226)))));
-            this.button1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(320, 235);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(212, 59);
-            this.button1.TabIndex = 27;
-            this.button1.Text = "SEARCH";
-            this.button1.UseVisualStyleBackColor = false;
+            this.searchBTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(226)))));
+            this.searchBTN.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchBTN.ForeColor = System.Drawing.Color.White;
+            this.searchBTN.Location = new System.Drawing.Point(320, 235);
+            this.searchBTN.Name = "searchBTN";
+            this.searchBTN.Size = new System.Drawing.Size(212, 59);
+            this.searchBTN.TabIndex = 27;
+            this.searchBTN.Text = "SEARCH";
+            this.searchBTN.UseVisualStyleBackColor = false;
+            this.searchBTN.Click += new System.EventHandler(this.button1_Click);
             // 
-            // textBox2
+            // searchTB
             // 
-            this.textBox2.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(51, 243);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(247, 41);
-            this.textBox2.TabIndex = 26;
+            this.searchTB.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchTB.Location = new System.Drawing.Point(51, 243);
+            this.searchTB.Multiline = true;
+            this.searchTB.Name = "searchTB";
+            this.searchTB.Size = new System.Drawing.Size(247, 41);
+            this.searchTB.TabIndex = 26;
             // 
             // dataGridView1
             // 
@@ -222,14 +228,28 @@
             this.dataGridView1.Size = new System.Drawing.Size(1183, 292);
             this.dataGridView1.TabIndex = 28;
             // 
+            // logoutBTN
+            // 
+            this.logoutBTN.BackColor = System.Drawing.Color.Red;
+            this.logoutBTN.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.logoutBTN.ForeColor = System.Drawing.Color.White;
+            this.logoutBTN.Location = new System.Drawing.Point(1013, 183);
+            this.logoutBTN.Name = "logoutBTN";
+            this.logoutBTN.Size = new System.Drawing.Size(131, 49);
+            this.logoutBTN.TabIndex = 29;
+            this.logoutBTN.Text = "LOGOUT";
+            this.logoutBTN.UseVisualStyleBackColor = false;
+            this.logoutBTN.Click += new System.EventHandler(this.logoutBTN_Click);
+            // 
             // TransactionReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1262, 673);
+            this.Controls.Add(this.logoutBTN);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.searchBTN);
+            this.Controls.Add(this.searchTB);
             this.Controls.Add(this.judul);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
@@ -256,20 +276,21 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label totalTransactionsTXT;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label incomingTransactionTXT;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label outgoingTransactionTXT;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label pendingApprovalTXT;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label judul;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button searchBTN;
+        private System.Windows.Forms.TextBox searchTB;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button logoutBTN;
     }
 }

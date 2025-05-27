@@ -29,26 +29,27 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StaffGudangDashboard));
-            this.button1 = new System.Windows.Forms.Button();
+            this.logoutBTN = new System.Windows.Forms.Button();
             this.transactionReportBTN = new System.Windows.Forms.Button();
-            this.inventoryReportBTN = new System.Windows.Forms.Button();
-            this.manageItemsBTN = new System.Windows.Forms.Button();
+            this.viewItemsBTN = new System.Windows.Forms.Button();
+            this.outComingItemsBTN = new System.Windows.Forms.Button();
             this.logoDS = new System.Windows.Forms.PictureBox();
-            this.manageUsersBTN = new System.Windows.Forms.Button();
+            this.incomingItemsBTN = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.logoDS)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
+            // logoutBTN
             // 
-            this.button1.BackColor = System.Drawing.Color.Red;
-            this.button1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(1119, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(131, 49);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "LOGOUT";
-            this.button1.UseVisualStyleBackColor = false;
+            this.logoutBTN.BackColor = System.Drawing.Color.Red;
+            this.logoutBTN.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.logoutBTN.ForeColor = System.Drawing.Color.White;
+            this.logoutBTN.Location = new System.Drawing.Point(1119, 12);
+            this.logoutBTN.Name = "logoutBTN";
+            this.logoutBTN.Size = new System.Drawing.Size(131, 49);
+            this.logoutBTN.TabIndex = 11;
+            this.logoutBTN.Text = "LOGOUT";
+            this.logoutBTN.UseVisualStyleBackColor = false;
+            this.logoutBTN.Click += new System.EventHandler(this.button1_Click);
             // 
             // transactionReportBTN
             // 
@@ -61,30 +62,33 @@
             this.transactionReportBTN.TabIndex = 10;
             this.transactionReportBTN.Text = "TRANSACTION REPORT";
             this.transactionReportBTN.UseVisualStyleBackColor = false;
+            this.transactionReportBTN.Click += new System.EventHandler(this.transactionReportBTN_Click);
             // 
-            // inventoryReportBTN
+            // viewItemsBTN
             // 
-            this.inventoryReportBTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(226)))));
-            this.inventoryReportBTN.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.inventoryReportBTN.ForeColor = System.Drawing.Color.White;
-            this.inventoryReportBTN.Location = new System.Drawing.Point(292, 467);
-            this.inventoryReportBTN.Name = "inventoryReportBTN";
-            this.inventoryReportBTN.Size = new System.Drawing.Size(196, 93);
-            this.inventoryReportBTN.TabIndex = 9;
-            this.inventoryReportBTN.Text = "VIEW ITEMS";
-            this.inventoryReportBTN.UseVisualStyleBackColor = false;
+            this.viewItemsBTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(226)))));
+            this.viewItemsBTN.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.viewItemsBTN.ForeColor = System.Drawing.Color.White;
+            this.viewItemsBTN.Location = new System.Drawing.Point(292, 467);
+            this.viewItemsBTN.Name = "viewItemsBTN";
+            this.viewItemsBTN.Size = new System.Drawing.Size(196, 93);
+            this.viewItemsBTN.TabIndex = 9;
+            this.viewItemsBTN.Text = "VIEW ITEMS";
+            this.viewItemsBTN.UseVisualStyleBackColor = false;
+            this.viewItemsBTN.Click += new System.EventHandler(this.viewItemsBTN_Click);
             // 
-            // manageItemsBTN
+            // outComingItemsBTN
             // 
-            this.manageItemsBTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(226)))));
-            this.manageItemsBTN.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.manageItemsBTN.ForeColor = System.Drawing.Color.White;
-            this.manageItemsBTN.Location = new System.Drawing.Point(763, 265);
-            this.manageItemsBTN.Name = "manageItemsBTN";
-            this.manageItemsBTN.Size = new System.Drawing.Size(196, 93);
-            this.manageItemsBTN.TabIndex = 8;
-            this.manageItemsBTN.Text = "OUTCOMING ITEMS";
-            this.manageItemsBTN.UseVisualStyleBackColor = false;
+            this.outComingItemsBTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(226)))));
+            this.outComingItemsBTN.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.outComingItemsBTN.ForeColor = System.Drawing.Color.White;
+            this.outComingItemsBTN.Location = new System.Drawing.Point(763, 265);
+            this.outComingItemsBTN.Name = "outComingItemsBTN";
+            this.outComingItemsBTN.Size = new System.Drawing.Size(196, 93);
+            this.outComingItemsBTN.TabIndex = 8;
+            this.outComingItemsBTN.Text = "OUTCOMING ITEMS";
+            this.outComingItemsBTN.UseVisualStyleBackColor = false;
+            this.outComingItemsBTN.Click += new System.EventHandler(this.outComingItemsBTN_Click);
             // 
             // logoDS
             // 
@@ -96,29 +100,30 @@
             this.logoDS.TabIndex = 7;
             this.logoDS.TabStop = false;
             // 
-            // manageUsersBTN
+            // incomingItemsBTN
             // 
-            this.manageUsersBTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(226)))));
-            this.manageUsersBTN.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.manageUsersBTN.ForeColor = System.Drawing.Color.White;
-            this.manageUsersBTN.Location = new System.Drawing.Point(292, 265);
-            this.manageUsersBTN.Name = "manageUsersBTN";
-            this.manageUsersBTN.Size = new System.Drawing.Size(196, 93);
-            this.manageUsersBTN.TabIndex = 6;
-            this.manageUsersBTN.Text = "INCOMING ITEMS";
-            this.manageUsersBTN.UseVisualStyleBackColor = false;
+            this.incomingItemsBTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(226)))));
+            this.incomingItemsBTN.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.incomingItemsBTN.ForeColor = System.Drawing.Color.White;
+            this.incomingItemsBTN.Location = new System.Drawing.Point(292, 265);
+            this.incomingItemsBTN.Name = "incomingItemsBTN";
+            this.incomingItemsBTN.Size = new System.Drawing.Size(196, 93);
+            this.incomingItemsBTN.TabIndex = 6;
+            this.incomingItemsBTN.Text = "INCOMING ITEMS";
+            this.incomingItemsBTN.UseVisualStyleBackColor = false;
+            this.incomingItemsBTN.Click += new System.EventHandler(this.incomingItemsBTN_Click);
             // 
             // StaffGudangDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1262, 673);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.logoutBTN);
             this.Controls.Add(this.transactionReportBTN);
-            this.Controls.Add(this.inventoryReportBTN);
-            this.Controls.Add(this.manageItemsBTN);
+            this.Controls.Add(this.viewItemsBTN);
+            this.Controls.Add(this.outComingItemsBTN);
             this.Controls.Add(this.logoDS);
-            this.Controls.Add(this.manageUsersBTN);
+            this.Controls.Add(this.incomingItemsBTN);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "StaffGudangDashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -130,11 +135,11 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button logoutBTN;
         private System.Windows.Forms.Button transactionReportBTN;
-        private System.Windows.Forms.Button inventoryReportBTN;
-        private System.Windows.Forms.Button manageItemsBTN;
+        private System.Windows.Forms.Button viewItemsBTN;
+        private System.Windows.Forms.Button outComingItemsBTN;
         private System.Windows.Forms.PictureBox logoDS;
-        private System.Windows.Forms.Button manageUsersBTN;
+        private System.Windows.Forms.Button incomingItemsBTN;
     }
 }

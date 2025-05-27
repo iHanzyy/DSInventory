@@ -28,7 +28,7 @@ namespace DSInventory
         private void showDisplay()
         {
             SqlCommand cmd = new SqlCommand("select * from users", conn);
-            SqlDataAdapter  sda = new SqlDataAdapter(cmd);
+            SqlDataAdapter sda = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             sda.Fill(dt);
             dataGridView1.DataSource = dt;
@@ -53,7 +53,7 @@ namespace DSInventory
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+
 
         }
 
@@ -86,7 +86,8 @@ namespace DSInventory
                 conn.Close();
                 showDisplay();
 
-            } else
+            }
+            else
             {
                 MessageBox.Show("DATA TIDAK VALID!");
             }
@@ -118,7 +119,8 @@ namespace DSInventory
 
         private void deleteUserBTN_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("YAKIN INGIN MENGHAPUS DATA INI?", "INFORMASI", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes) {
+            if (MessageBox.Show("YAKIN INGIN MENGHAPUS DATA INI?", "INFORMASI", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
 
                 string id = idTB.Text;
                 SqlCommand cmd = new SqlCommand($"delete from users where id='{id}'", conn);
@@ -127,7 +129,8 @@ namespace DSInventory
                 conn.Close();
                 MessageBox.Show("BERHASIL HAPUS DATA!");
                 showDisplay();
-            } else
+            }
+            else
             {
                 MessageBox.Show("GAGAL MENGHAPUS DATA!");
             }
