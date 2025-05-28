@@ -19,6 +19,7 @@ namespace DSInventory
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Session.Clear();
             LoginPage loginForm = new LoginPage();
             loginForm.Show();
             this.Hide();

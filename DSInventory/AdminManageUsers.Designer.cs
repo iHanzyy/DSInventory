@@ -47,6 +47,7 @@
             this.idTB = new System.Windows.Forms.TextBox();
             this.backBTN = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -253,10 +254,19 @@
             // 
             this.panel1.BackgroundImage = global::DSInventory.Properties.Resources.userlist;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Location = new System.Drawing.Point(311, 94);
+            this.panel1.Location = new System.Drawing.Point(686, 94);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(431, 258);
             this.panel1.TabIndex = 20;
+            // 
+            // panel2
+            // 
+            this.panel2.BackgroundImage = global::DSInventory.Properties.Resources.logoStruggle1;
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel2.Location = new System.Drawing.Point(311, 12);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(357, 340);
+            this.panel2.TabIndex = 21;
             // 
             // AdminManageUsers
             // 
@@ -264,6 +274,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(226)))));
             this.ClientSize = new System.Drawing.Size(1902, 1175);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.backBTN);
             this.Controls.Add(this.label5);
@@ -314,5 +325,6 @@
         private System.Windows.Forms.TextBox idTB;
         private System.Windows.Forms.Button backBTN;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
     }
 }

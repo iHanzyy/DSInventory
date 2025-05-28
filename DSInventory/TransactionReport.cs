@@ -134,13 +134,6 @@ LEFT JOIN users au ON t.approvedBy = au.username
             search(searchValue);
         }
 
-        private void logoutBTN_Click(object sender, EventArgs e)
-        {
-            LoginPage loginForm = new LoginPage();
-            loginForm.Show();
-            this.Hide();
-            return;
-        }
 
         private void totalTransactionsTXT_Click(object sender, EventArgs e)
         {
@@ -160,6 +153,32 @@ LEFT JOIN users au ON t.approvedBy = au.username
         private void pendingApprovalTXT_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void backBTN_Click(object sender, EventArgs e)
+        {
+            string role = Session.Role?.ToUpper();
+
+            Form dashboardForm = null;
+
+            switch (role)
+            {
+                case "ADMIN":
+                    dashboardForm = new AdminDashboard();
+                    break;
+                case "MANAGER":
+                    dashboardForm = new ManagerDashboard();
+                    break;
+                case "STAFF GUDANG":
+                    dashboardForm = new StaffGudangDashboard();
+                    break;
+                default:
+                    MessageBox.Show("Role tidak dikenali. Tidak bisa kembali ke dashboard.", "Kesalahan", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+            }
+
+            dashboardForm.Show();
+            this.Close(); // atau this.Hide(); jika tidak ingin ditutup sepenuhnya
         }
     }
 }

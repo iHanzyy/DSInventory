@@ -45,7 +45,7 @@
             this.searchBTN = new System.Windows.Forms.Button();
             this.searchTB = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.logoutBTN = new System.Windows.Forms.Button();
+            this.backBTN = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -228,25 +228,25 @@
             this.dataGridView1.Size = new System.Drawing.Size(1183, 292);
             this.dataGridView1.TabIndex = 28;
             // 
-            // logoutBTN
+            // backBTN
             // 
-            this.logoutBTN.BackColor = System.Drawing.Color.Red;
-            this.logoutBTN.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.logoutBTN.ForeColor = System.Drawing.Color.White;
-            this.logoutBTN.Location = new System.Drawing.Point(1013, 183);
-            this.logoutBTN.Name = "logoutBTN";
-            this.logoutBTN.Size = new System.Drawing.Size(131, 49);
-            this.logoutBTN.TabIndex = 29;
-            this.logoutBTN.Text = "LOGOUT";
-            this.logoutBTN.UseVisualStyleBackColor = false;
-            this.logoutBTN.Click += new System.EventHandler(this.logoutBTN_Click);
+            this.backBTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(226)))));
+            this.backBTN.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.backBTN.ForeColor = System.Drawing.Color.White;
+            this.backBTN.Location = new System.Drawing.Point(805, 192);
+            this.backBTN.Name = "backBTN";
+            this.backBTN.Size = new System.Drawing.Size(131, 49);
+            this.backBTN.TabIndex = 30;
+            this.backBTN.Text = "BACK";
+            this.backBTN.UseVisualStyleBackColor = false;
+            this.backBTN.Click += new System.EventHandler(this.backBTN_Click);
             // 
             // TransactionReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1262, 673);
-            this.Controls.Add(this.logoutBTN);
+            this.Controls.Add(this.backBTN);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.searchBTN);
             this.Controls.Add(this.searchTB);
@@ -291,6 +291,6 @@
         private System.Windows.Forms.Button searchBTN;
         private System.Windows.Forms.TextBox searchTB;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button logoutBTN;
+        private System.Windows.Forms.Button backBTN;
     }
 }

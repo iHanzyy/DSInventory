@@ -90,7 +90,7 @@
             this.backBTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(226)))));
             this.backBTN.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.backBTN.ForeColor = System.Drawing.Color.White;
-            this.backBTN.Location = new System.Drawing.Point(1015, 30);
+            this.backBTN.Location = new System.Drawing.Point(1088, 30);
             this.backBTN.Name = "backBTN";
             this.backBTN.Size = new System.Drawing.Size(131, 49);
             this.backBTN.TabIndex = 24;

@@ -13,7 +13,6 @@ namespace DSInventory
 {
     public partial class StaffGudangIncomingItems : Form
     {
-        string currentUser = "staffGudang";
         public StaffGudangIncomingItems()
         {
             InitializeComponent();
@@ -120,7 +119,7 @@ namespace DSInventory
             cmd.Parameters.AddWithValue("@type", type);
             cmd.Parameters.AddWithValue("@date", date);
             cmd.Parameters.AddWithValue("@status", status);
-            cmd.Parameters.AddWithValue("@createdBy", currentUser); // currentUser bisa dari login
+            cmd.Parameters.AddWithValue("@createdBy", Session.Username);
 
             conn.Open();
             cmd.ExecuteNonQuery();

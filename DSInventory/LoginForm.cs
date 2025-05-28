@@ -71,19 +71,25 @@ namespace DSInventory
                     return;
                 }
 
-                string query = "SELECT role FROM [users] WHERE username = @username AND password = @password";
+
+
 
                 conn.Open();
-                using (SqlCommand cmd = new SqlCommand(query, conn))
+                using (SqlCommand cmd = new SqlCommand("sp_login_user", conn))
                 {
+                    cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@username", username);
                     cmd.Parameters.AddWithValue("@password", password);
 
-                    object result = cmd.ExecuteScalar();
+                    SqlDataReader reader = cmd.ExecuteReader();
 
-                    if (result != null)
+                    if (reader.Read() && !reader.IsDBNull(0))
                     {
-                        string role = result.ToString().ToUpper();
+                        Session.UserId = reader.GetInt32(0);
+                        Session.Username = reader.GetString(1);
+                        Session.Role = reader.GetString(2);
+
+                        string role = Session.Role;
 
                         if (role == "MANAGER")
                         {
@@ -94,6 +100,11 @@ namespace DSInventory
                         {
                             StaffGudangDashboard staffForm = new StaffGudangDashboard();
                             staffForm.Show();
+                        }
+                        else if (role == "ADMIN")
+                        {
+                            AdminDashboard adminForm = new AdminDashboard();
+                            adminForm.Show();
                         }
                         else
                         {

@@ -17,6 +17,7 @@ namespace DSInventory
         {
             InitializeComponent();
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill; // Agar Full Size
+            StyleDataGridView(); // Untuk Styling DataGridView
             showDisplay();
             updateLabels();
         }
@@ -46,6 +47,28 @@ namespace DSInventory
             {
                 MessageBox.Show("DATA YANG ANDA CARI TIDAK ADA!");
             }
+        }
+
+        private void StyleDataGridView()
+        {
+            dataGridView1.BorderStyle = BorderStyle.None;
+            dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
+            dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dataGridView1.DefaultCellStyle.SelectionBackColor = Color.FromArgb(72, 123, 237);
+            dataGridView1.DefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
+            dataGridView1.BackgroundColor = Color.White;
+            dataGridView1.EnableHeadersVisualStyles = false;
+            dataGridView1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(52, 73, 94);
+            dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dataGridView1.DefaultCellStyle.Font = new Font("Segoe UI", 10);
+            dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 11, FontStyle.Bold);
+            dataGridView1.RowTemplate.Height = 30;
+            dataGridView1.GridColor = Color.LightGray;
+            dataGridView1.RowsDefaultCellStyle.BackColor = Color.White;
+            dataGridView1.RowsDefaultCellStyle.ForeColor = Color.Black;
+            dataGridView1.RowHeadersVisible = false;
+
         }
         private void updateLabels()
         {
@@ -111,17 +134,32 @@ namespace DSInventory
 
         }
 
+
+
         private void backBTN_Click(object sender, EventArgs e)
         {
+            string role = Session.Role?.ToUpper();
 
-        }
+            Form dashboardForm = null;
 
-        private void logoutBTN_Click(object sender, EventArgs e)
-        {
-            LoginPage loginForm = new LoginPage();
-            loginForm.Show();
-            this.Hide();
-            return;
+            switch (role)
+            {
+                case "ADMIN":
+                    dashboardForm = new AdminDashboard();
+                    break;
+                case "MANAGER":
+                    dashboardForm = new ManagerDashboard();
+                    break;
+                case "STAFF GUDANG":
+                    dashboardForm = new StaffGudangDashboard();
+                    break;
+                default:
+                    MessageBox.Show("Role tidak dikenali. Tidak bisa kembali ke dashboard.", "Kesalahan", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+            }
+
+            dashboardForm.Show();
+            this.Close(); // atau this.Hide(); jika tidak ingin ditutup sepenuhnya
         }
     }
 }

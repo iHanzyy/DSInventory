@@ -16,7 +16,7 @@ namespace DSInventory
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new InventoryReport());
+            Application.Run(new LoginPage());
         }
     }
 }

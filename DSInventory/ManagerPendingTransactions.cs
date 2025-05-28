@@ -15,7 +15,7 @@ namespace DSInventory
     public partial class ManagerPendingTransactions : Form
     {
         string selectedTransactionCode = "";
-        string currentManager = "manager";
+        
         public ManagerPendingTransactions()
         {
             InitializeComponent();
@@ -64,7 +64,7 @@ namespace DSInventory
                 return;
             }
             SqlCommand cmd = new SqlCommand("UPDATE [transaction] SET status = 'Approved', approvedBy = @approvedBy WHERE transactionCode = @code", conn);
-            cmd.Parameters.AddWithValue("@approvedBy", currentManager);
+            cmd.Parameters.AddWithValue("@approvedBy", Session.Username);
             cmd.Parameters.AddWithValue("@code", selectedTransactionCode);
             conn.Open();
             cmd.ExecuteNonQuery();
@@ -83,7 +83,7 @@ namespace DSInventory
                 return;
             }
             SqlCommand cmd = new SqlCommand("UPDATE [transaction] SET status = 'Rejected', approvedBy = @approvedBy WHERE transactionCode = @code", conn);
-            cmd.Parameters.AddWithValue("@approvedBy", currentManager);
+            cmd.Parameters.AddWithValue("@approvedBy", Session.Username);
             cmd.Parameters.AddWithValue("@code", selectedTransactionCode);
             conn.Open();
             cmd.ExecuteNonQuery();
