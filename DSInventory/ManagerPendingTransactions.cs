@@ -87,77 +87,106 @@ namespace DSInventory
                 return;
             }
 
-            conn.Open();
-
-            // Ambil detail
-            SqlCommand getCmd = new SqlCommand(
-                "SELECT itemCode, quantity, type FROM [transaction] WHERE transactionCode = @code",
-                conn);
-            getCmd.Parameters.AddWithValue("@code", selectedTransactionCode);
-            string itemCode = "", type = "";
-            int qty = 0;
-
-            using (SqlDataReader r = getCmd.ExecuteReader())
+            try
             {
-                if (r.Read())
-                {
-                    itemCode = r["itemCode"].ToString();
-                    qty = Convert.ToInt32(r["quantity"]);
-                    type = r["type"].ToString();
-                }
-                else
-                {
-                    MessageBox.Show("Transaksi tidak ditemukan.");
-                    conn.Close();
-                    return;
-                }
-            }
+                conn.Open();
 
-            // **Jika jenis Outcoming, cek stok sebelum approve**
-            if (type.Equals("Outcoming", StringComparison.OrdinalIgnoreCase))
+                // 1. Ambil detail transaksi
+                string itemCode = "";
+                string type = "";
+                int qty = 0;
+                using (var getCmd = new SqlCommand(
+                    "SELECT itemCode, quantity, type FROM [transaction] WHERE transactionCode = @code",
+                    conn))
+                {
+                    getCmd.Parameters.AddWithValue("@code", selectedTransactionCode);
+                    using (var reader = getCmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            itemCode = reader["itemCode"].ToString();
+
+                            var rawQty = reader["quantity"];
+                            if (rawQty == DBNull.Value)
+                            {
+                                MessageBox.Show("Data quantity tidak valid.");
+                                return;
+                            }
+                            qty = Convert.ToInt32(rawQty);
+
+                            type = reader["type"].ToString();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Transaksi tidak ditemukan.");
+                            return;
+                        }
+                    }
+                }
+
+                // 2. Kalau Outcoming, cek stok dulu
+                if (type.Equals("Outcoming", StringComparison.OrdinalIgnoreCase))
+                {
+                    using (var checkStock = new SqlCommand(
+                        "SELECT quantity FROM items WHERE itemCode = @code", conn))
+                    {
+                        checkStock.Parameters.AddWithValue("@code", itemCode);
+                        var rawStock = checkStock.ExecuteScalar();
+                        if (rawStock == null || rawStock == DBNull.Value)
+                        {
+                            MessageBox.Show("Item tidak ditemukan di master stok.");
+                            return;
+                        }
+
+                        int currentStock = Convert.ToInt32(rawStock);
+                        if (currentStock < qty)
+                        {
+                            MessageBox.Show(
+                                $"Stok tidak mencukupi untuk transaksi ini.\n" +
+                                $"Stok saat ini: {currentStock}, permintaan: {qty}\n" +
+                                $"Proses approve dibatalkan.");
+                            return;
+                        }
+                    }
+                }
+
+                // 3. Update status transaksi jadi Approved
+                using (var updateTrans = new SqlCommand(
+                    @"UPDATE [transaction]
+              SET status = 'Approved',
+                  approvedBy = @approvedBy
+              WHERE transactionCode = @code", conn))
+                {
+                    updateTrans.Parameters.AddWithValue("@approvedBy", Session.Username);
+                    updateTrans.Parameters.AddWithValue("@code", selectedTransactionCode);
+                    updateTrans.ExecuteNonQuery();
+                }
+
+                // 4. Koreksi stok sesuai tipe
+                string updItemSql = type.Equals("Incoming", StringComparison.OrdinalIgnoreCase)
+                    ? "UPDATE items SET quantity = quantity + @qty WHERE itemCode = @itemCode"
+                    : "UPDATE items SET quantity = quantity - @qty WHERE itemCode = @itemCode";
+
+                using (var updateItems = new SqlCommand(updItemSql, conn))
+                {
+                    updateItems.Parameters.AddWithValue("@qty", qty);
+                    updateItems.Parameters.AddWithValue("@itemCode", itemCode);
+                    updateItems.ExecuteNonQuery();
+                }
+
+                MessageBox.Show("Transaksi disetujui dan stok di-update.");
+                showDisplay();
+                selectedTransactionCode = "";
+            }
+            catch (Exception ex)
             {
-                SqlCommand checkStock = new SqlCommand(
-                    "SELECT CAST(quantity AS INT) FROM items WHERE itemCode = @code",
-                    conn);
-                checkStock.Parameters.AddWithValue("@code", itemCode);
-                int currentStock = (int)checkStock.ExecuteScalar();
-
-                if (currentStock < qty)
-                {
-                    MessageBox.Show(
-                        $"Stok tidak mencukupi untuk transaksi ini.\n" +
-                        $"Stok saat ini: {currentStock}, permintaan: {qty}\n" +
-                        $"Proses approve dibatalkan.");
-                    conn.Close();
-                    return;
-                }
+                MessageBox.Show("Terjadi kesalahan: " + ex.Message);
             }
-
-            // Update status transaksi jadi Approved
-            SqlCommand updateTrans = new SqlCommand(
-                @"UPDATE [transaction]
-          SET status = 'Approved',
-              approvedBy = @approvedBy
-          WHERE transactionCode = @code",
-                conn);
-            updateTrans.Parameters.AddWithValue("@approvedBy", Session.Username);
-            updateTrans.Parameters.AddWithValue("@code", selectedTransactionCode);
-            updateTrans.ExecuteNonQuery();
-
-            // Adjust stok
-            string updItemSql = type.Equals("Incoming", StringComparison.OrdinalIgnoreCase)
-                ? "UPDATE items SET quantity = CAST(quantity AS INT) + @qty WHERE itemCode = @itemCode"
-                : "UPDATE items SET quantity = CAST(quantity AS INT) - @qty WHERE itemCode = @itemCode";
-
-            SqlCommand updateItems = new SqlCommand(updItemSql, conn);
-            updateItems.Parameters.AddWithValue("@qty", qty);
-            updateItems.Parameters.AddWithValue("@itemCode", itemCode);
-            updateItems.ExecuteNonQuery();
-
-            conn.Close();
-            MessageBox.Show("Transaksi disetujui dan stok di-update.");
-            showDisplay();
-            selectedTransactionCode = "";
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                    conn.Close();
+            }
         }
 
         private void rejectBTN_Click(object sender, EventArgs e)

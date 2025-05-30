@@ -49,6 +49,7 @@ namespace DSInventory
 
         private void submitTransactionBTN_Click(object sender, EventArgs e)
         {
+            // validasi input
             if (selectItemBTN.SelectedValue == null || string.IsNullOrWhiteSpace(quantityBTN.Text))
             {
                 MessageBox.Show("Lengkapi semua data terlebih dahulu!");
@@ -56,18 +57,34 @@ namespace DSInventory
             }
 
             string itemCode = selectItemBTN.SelectedValue.ToString();
-            int requestedQty = int.Parse(quantityBTN.Text);
+
+            // validasi angka
+            if (!int.TryParse(quantityBTN.Text, out int requestedQty))
+            {
+                MessageBox.Show("Jumlah harus berupa angka bulat!");
+                return;
+            }
 
             // **CEK STOK SAAT INI**
-            int currentStock;
-            using (SqlCommand checkStock = new SqlCommand(
-                "SELECT CAST(quantity AS INT) FROM items WHERE itemCode = @code", conn))
+            object rawStock;
+            using (var checkStock = new SqlCommand(
+                "SELECT quantity FROM items WHERE itemCode = @code", conn))
             {
                 checkStock.Parameters.AddWithValue("@code", itemCode);
                 conn.Open();
-                currentStock = (int)checkStock.ExecuteScalar();
+                rawStock = checkStock.ExecuteScalar();
                 conn.Close();
             }
+
+            // cek null / DBNull
+            if (rawStock == null || rawStock == DBNull.Value)
+            {
+                MessageBox.Show("Item tidak ditemukan atau stok belum diatur.");
+                return;
+            }
+
+            // unbox aman ke int (bisa dari bigint, smallint, decimal, dll.)
+            int currentStock = Convert.ToInt32(rawStock);
 
             if (requestedQty > currentStock)
             {
@@ -77,12 +94,12 @@ namespace DSInventory
                 return;
             }
 
-            // kalau cukup, baru masukkan transaksi pending
+            // kalau cukup, masukkan transaksi pending
             DateTime date = transactionDateDTP.Value;
-            string type = "Outcoming";
-            string status = "Pending";
+            const string type = "Outcoming";
+            const string status = "Pending";
 
-            using (SqlCommand cmd = new SqlCommand(
+            using (var cmd = new SqlCommand(
                 @"INSERT INTO [transaction]
           (itemCode, quantity, type, date, status, createdBy, approvedBy)
           VALUES

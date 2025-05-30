@@ -47,6 +47,7 @@
             this.backBTN = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -249,12 +250,22 @@
             this.panel6.Size = new System.Drawing.Size(431, 258);
             this.panel6.TabIndex = 32;
             // 
+            // panel7
+            // 
+            this.panel7.BackgroundImage = global::DSInventory.Properties.Resources.searchLogo1;
+            this.panel7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel7.Location = new System.Drawing.Point(1218, 176);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(87, 87);
+            this.panel7.TabIndex = 33;
+            // 
             // TransactionReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(226)))));
             this.ClientSize = new System.Drawing.Size(1902, 1175);
+            this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.backBTN);
@@ -304,5 +315,6 @@
         private System.Windows.Forms.Button backBTN;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel panel7;
     }
 }
