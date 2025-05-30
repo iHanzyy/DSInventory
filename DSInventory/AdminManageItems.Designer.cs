@@ -44,8 +44,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.categoryTB = new System.Windows.Forms.TextBox();
             this.backBTN = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -216,15 +217,14 @@
             this.backBTN.UseVisualStyleBackColor = false;
             this.backBTN.Click += new System.EventHandler(this.backBTN_Click);
             // 
-            // panel1
+            // panel3
             // 
-            this.panel1.BackgroundImage = global::DSInventory.Properties.Resources.itemlist1;
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Location = new System.Drawing.Point(686, 94);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(431, 258);
-            this.panel1.TabIndex = 28;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            this.panel3.BackgroundImage = global::DSInventory.Properties.Resources.searchLogo1;
+            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel3.Location = new System.Drawing.Point(1218, 176);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(87, 87);
+            this.panel3.TabIndex = 30;
             // 
             // panel2
             // 
@@ -235,12 +235,23 @@
             this.panel2.Size = new System.Drawing.Size(357, 340);
             this.panel2.TabIndex = 29;
             // 
+            // panel1
+            // 
+            this.panel1.BackgroundImage = global::DSInventory.Properties.Resources.itemlist1;
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Location = new System.Drawing.Point(686, 94);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(431, 258);
+            this.panel1.TabIndex = 28;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
             // AdminManageItems
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(226)))));
             this.ClientSize = new System.Drawing.Size(1902, 1175);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.backBTN);
@@ -288,5 +299,6 @@
         private System.Windows.Forms.Button backBTN;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel3;
     }
 }

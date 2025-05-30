@@ -33,8 +33,9 @@
             this.transactionReportBTN = new System.Windows.Forms.Button();
             this.viewItemsBTN = new System.Windows.Forms.Button();
             this.outComingItemsBTN = new System.Windows.Forms.Button();
-            this.logoDS = new System.Windows.Forms.PictureBox();
             this.incomingItemsBTN = new System.Windows.Forms.Button();
+            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.logoDS = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.logoDS)).BeginInit();
             this.SuspendLayout();
             // 
@@ -43,9 +44,9 @@
             this.logoutBTN.BackColor = System.Drawing.Color.Red;
             this.logoutBTN.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.logoutBTN.ForeColor = System.Drawing.Color.White;
-            this.logoutBTN.Location = new System.Drawing.Point(1119, 12);
+            this.logoutBTN.Location = new System.Drawing.Point(1694, 12);
             this.logoutBTN.Name = "logoutBTN";
-            this.logoutBTN.Size = new System.Drawing.Size(131, 49);
+            this.logoutBTN.Size = new System.Drawing.Size(196, 79);
             this.logoutBTN.TabIndex = 11;
             this.logoutBTN.Text = "LOGOUT";
             this.logoutBTN.UseVisualStyleBackColor = false;
@@ -53,12 +54,12 @@
             // 
             // transactionReportBTN
             // 
-            this.transactionReportBTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(226)))));
-            this.transactionReportBTN.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.transactionReportBTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.transactionReportBTN.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.transactionReportBTN.ForeColor = System.Drawing.Color.White;
-            this.transactionReportBTN.Location = new System.Drawing.Point(763, 467);
+            this.transactionReportBTN.Location = new System.Drawing.Point(1279, 831);
             this.transactionReportBTN.Name = "transactionReportBTN";
-            this.transactionReportBTN.Size = new System.Drawing.Size(196, 93);
+            this.transactionReportBTN.Size = new System.Drawing.Size(283, 120);
             this.transactionReportBTN.TabIndex = 10;
             this.transactionReportBTN.Text = "TRANSACTION REPORT";
             this.transactionReportBTN.UseVisualStyleBackColor = false;
@@ -66,12 +67,12 @@
             // 
             // viewItemsBTN
             // 
-            this.viewItemsBTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(226)))));
-            this.viewItemsBTN.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.viewItemsBTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.viewItemsBTN.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.viewItemsBTN.ForeColor = System.Drawing.Color.White;
-            this.viewItemsBTN.Location = new System.Drawing.Point(292, 467);
+            this.viewItemsBTN.Location = new System.Drawing.Point(413, 831);
             this.viewItemsBTN.Name = "viewItemsBTN";
-            this.viewItemsBTN.Size = new System.Drawing.Size(196, 93);
+            this.viewItemsBTN.Size = new System.Drawing.Size(283, 120);
             this.viewItemsBTN.TabIndex = 9;
             this.viewItemsBTN.Text = "VIEW ITEMS";
             this.viewItemsBTN.UseVisualStyleBackColor = false;
@@ -79,55 +80,67 @@
             // 
             // outComingItemsBTN
             // 
-            this.outComingItemsBTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(226)))));
-            this.outComingItemsBTN.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.outComingItemsBTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.outComingItemsBTN.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.outComingItemsBTN.ForeColor = System.Drawing.Color.White;
-            this.outComingItemsBTN.Location = new System.Drawing.Point(763, 265);
+            this.outComingItemsBTN.Location = new System.Drawing.Point(1279, 548);
             this.outComingItemsBTN.Name = "outComingItemsBTN";
-            this.outComingItemsBTN.Size = new System.Drawing.Size(196, 93);
+            this.outComingItemsBTN.Size = new System.Drawing.Size(283, 120);
             this.outComingItemsBTN.TabIndex = 8;
             this.outComingItemsBTN.Text = "OUTCOMING ITEMS";
             this.outComingItemsBTN.UseVisualStyleBackColor = false;
             this.outComingItemsBTN.Click += new System.EventHandler(this.outComingItemsBTN_Click);
             // 
-            // logoDS
-            // 
-            this.logoDS.Image = global::DSInventory.Properties.Resources.logoStruggle;
-            this.logoDS.Location = new System.Drawing.Point(534, 12);
-            this.logoDS.Name = "logoDS";
-            this.logoDS.Size = new System.Drawing.Size(200, 200);
-            this.logoDS.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.logoDS.TabIndex = 7;
-            this.logoDS.TabStop = false;
-            // 
             // incomingItemsBTN
             // 
-            this.incomingItemsBTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(226)))));
-            this.incomingItemsBTN.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.incomingItemsBTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.incomingItemsBTN.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.incomingItemsBTN.ForeColor = System.Drawing.Color.White;
-            this.incomingItemsBTN.Location = new System.Drawing.Point(292, 265);
+            this.incomingItemsBTN.Location = new System.Drawing.Point(413, 548);
             this.incomingItemsBTN.Name = "incomingItemsBTN";
-            this.incomingItemsBTN.Size = new System.Drawing.Size(196, 93);
+            this.incomingItemsBTN.Size = new System.Drawing.Size(283, 120);
             this.incomingItemsBTN.TabIndex = 6;
             this.incomingItemsBTN.Text = "INCOMING ITEMS";
             this.incomingItemsBTN.UseVisualStyleBackColor = false;
             this.incomingItemsBTN.Click += new System.EventHandler(this.incomingItemsBTN_Click);
             // 
+            // guna2Panel1
+            // 
+            this.guna2Panel1.BackgroundImage = global::DSInventory.Properties.Resources.staffGudangDashboard;
+            this.guna2Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Panel1.Location = new System.Drawing.Point(917, 103);
+            this.guna2Panel1.Name = "guna2Panel1";
+            this.guna2Panel1.Size = new System.Drawing.Size(628, 330);
+            this.guna2Panel1.TabIndex = 13;
+            // 
+            // logoDS
+            // 
+            this.logoDS.Image = global::DSInventory.Properties.Resources.logoStruggle1;
+            this.logoDS.Location = new System.Drawing.Point(413, 24);
+            this.logoDS.Name = "logoDS";
+            this.logoDS.Size = new System.Drawing.Size(436, 449);
+            this.logoDS.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.logoDS.TabIndex = 12;
+            this.logoDS.TabStop = false;
+            // 
             // StaffGudangDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1262, 673);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(226)))));
+            this.ClientSize = new System.Drawing.Size(1902, 1175);
+            this.Controls.Add(this.guna2Panel1);
+            this.Controls.Add(this.logoDS);
             this.Controls.Add(this.logoutBTN);
             this.Controls.Add(this.transactionReportBTN);
             this.Controls.Add(this.viewItemsBTN);
             this.Controls.Add(this.outComingItemsBTN);
-            this.Controls.Add(this.logoDS);
             this.Controls.Add(this.incomingItemsBTN);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "StaffGudangDashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "StaffGudangDashboard";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.logoDS)).EndInit();
             this.ResumeLayout(false);
 
@@ -139,7 +152,8 @@
         private System.Windows.Forms.Button transactionReportBTN;
         private System.Windows.Forms.Button viewItemsBTN;
         private System.Windows.Forms.Button outComingItemsBTN;
-        private System.Windows.Forms.PictureBox logoDS;
         private System.Windows.Forms.Button incomingItemsBTN;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
+        private System.Windows.Forms.PictureBox logoDS;
     }
 }

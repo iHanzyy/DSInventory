@@ -44,6 +44,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.backBTN = new System.Windows.Forms.Button();
+            this.panel6 = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -202,16 +203,25 @@
             // 
             // backBTN
             // 
-            this.backBTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(226)))));
+            this.backBTN.BackColor = System.Drawing.Color.Green;
             this.backBTN.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.backBTN.ForeColor = System.Drawing.Color.White;
-            this.backBTN.Location = new System.Drawing.Point(1735, 36);
+            this.backBTN.Location = new System.Drawing.Point(1694, 12);
             this.backBTN.Name = "backBTN";
-            this.backBTN.Size = new System.Drawing.Size(131, 49);
+            this.backBTN.Size = new System.Drawing.Size(196, 79);
             this.backBTN.TabIndex = 31;
             this.backBTN.Text = "BACK";
             this.backBTN.UseVisualStyleBackColor = false;
             this.backBTN.Click += new System.EventHandler(this.backBTN_Click);
+            // 
+            // panel6
+            // 
+            this.panel6.BackgroundImage = global::DSInventory.Properties.Resources.searchLogo1;
+            this.panel6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel6.Location = new System.Drawing.Point(1218, 176);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(87, 87);
+            this.panel6.TabIndex = 32;
             // 
             // InventoryReport
             // 
@@ -219,6 +229,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(226)))));
             this.ClientSize = new System.Drawing.Size(1902, 1175);
+            this.Controls.Add(this.panel6);
             this.Controls.Add(this.backBTN);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
@@ -261,5 +272,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button backBTN;
+        private System.Windows.Forms.Panel panel6;
     }
 }
