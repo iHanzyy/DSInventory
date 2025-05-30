@@ -54,25 +54,52 @@ namespace DSInventory
                 MessageBox.Show("Lengkapi semua data terlebih dahulu!");
                 return;
             }
+
             string itemCode = selectItemBTN.SelectedValue.ToString();
-            string quantity = quantityBTN.Text;
+            int requestedQty = int.Parse(quantityBTN.Text);
+
+            // **CEK STOK SAAT INI**
+            int currentStock;
+            using (SqlCommand checkStock = new SqlCommand(
+                "SELECT CAST(quantity AS INT) FROM items WHERE itemCode = @code", conn))
+            {
+                checkStock.Parameters.AddWithValue("@code", itemCode);
+                conn.Open();
+                currentStock = (int)checkStock.ExecuteScalar();
+                conn.Close();
+            }
+
+            if (requestedQty > currentStock)
+            {
+                MessageBox.Show(
+                    $"Stok tidak mencukupi!\n" +
+                    $"Stok saat ini: {currentStock}, permintaan: {requestedQty}");
+                return;
+            }
+
+            // kalau cukup, baru masukkan transaksi pending
             DateTime date = transactionDateDTP.Value;
             string type = "Outcoming";
             string status = "Pending";
 
-            SqlCommand cmd = new SqlCommand("INSERT INTO [transaction] (itemCode, quantity, type, date, status, createdBy, approvedBy) " +
-                "VALUES (@itemCode, @quantity, @type, @date, @status, @createdBy, NULL)", conn);
+            using (SqlCommand cmd = new SqlCommand(
+                @"INSERT INTO [transaction]
+          (itemCode, quantity, type, date, status, createdBy, approvedBy)
+          VALUES
+          (@itemCode, @quantity, @type, @date, @status, @createdBy, NULL)",
+                conn))
+            {
+                cmd.Parameters.AddWithValue("@itemCode", itemCode);
+                cmd.Parameters.AddWithValue("@quantity", requestedQty);
+                cmd.Parameters.AddWithValue("@type", type);
+                cmd.Parameters.AddWithValue("@date", date);
+                cmd.Parameters.AddWithValue("@status", status);
+                cmd.Parameters.AddWithValue("@createdBy", Session.Username);
 
-            cmd.Parameters.AddWithValue("@itemCode", itemCode);
-            cmd.Parameters.AddWithValue("@quantity", quantity);
-            cmd.Parameters.AddWithValue("@type", type);
-            cmd.Parameters.AddWithValue("@date", date);
-            cmd.Parameters.AddWithValue("@status", status);
-            cmd.Parameters.AddWithValue("@createdBy", Session.Username);
-
-            conn.Open();
-            cmd.ExecuteNonQuery();
-            conn.Close();
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                conn.Close();
+            }
 
             MessageBox.Show("Transaksi berhasil dikirim. Menunggu persetujuan manager.");
 
